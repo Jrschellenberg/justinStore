@@ -1,0 +1,41 @@
+{
+  "name": "webpackJSExample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack -w --mode=development",
+    "start": "concurrently \"cd .. && theme watch\" \"npm run watch\"",
+    "test": "mocha -r ts-node/register --require mock-local-storage test/**/*",
+    "BDD": "onchange ./**/*.ts test/**/*.ts -- npm test",
+    "coverage": "nyc mocha -r ts-node/register --require mock-local-storage test/**/*",
+    "noThemeWatch": "concurrently \"npm run watch\"",
+    "build": "webpack --mode=production && bmstk -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/polyfill": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babel-loader": "^8.0.0-beta.0",
+    "chai": "^4.2.0",
+    "concurrently": "^4.0.1",
+    "mocha": "^5.2.0",
+    "mock-local-storage": "^1.1.7",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.4",
+    "nyc": "^13.1.0",
+    "onchange": "^5.0.2",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "bms-expose-module": "^0.0.6"
+  }
+}
