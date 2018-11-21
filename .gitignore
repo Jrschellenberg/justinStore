@@ -17,3 +17,4 @@ bold-common.liquid
 config.*.yml
 *.cache*
 src/dist/*
+coverage/
