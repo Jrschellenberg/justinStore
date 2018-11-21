@@ -6,9 +6,9 @@
   "scripts": {
     "watch": "webpack -w --mode=development",
     "start": "concurrently \"cd .. && theme watch\" \"npm run watch\"",
-    "test": "mocha --compilers js:@babel/register test/**/*",
+    "test": "mocha --require @babel/register test/**/*",
     "BDD": "onchange ./**/*.js test/**/*.js -- npm test",
-    "coverage": "nyc mocha --compilers js:@babel/register test/**/*",
+    "coverage": "nyc mocha --require @babel/register test/**/*",
     "noThemeWatch": "concurrently \"npm run watch\"",
     "build": "webpack --mode=production && bmstk -c"
   },
